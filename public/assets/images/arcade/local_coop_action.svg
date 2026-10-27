@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <radialGradient id="coopBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#24113D"/>
+      <stop offset="100%" stop-color="#09070D"/>
+    </radialGradient>
+    <filter id="coopGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#coopBg)"/>
+
+  <!-- Radial Pulse from Players -->
+  <circle cx="400" cy="225" r="180" fill="none" stroke="#7B2CFF" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.4"/>
+  <circle cx="400" cy="225" r="110" fill="none" stroke="#20E3FF" stroke-width="1" stroke-dasharray="4 6" opacity="0.3"/>
+
+  <!-- Co-Op Link Tether between P1 and P2 -->
+  <line x1="340" y1="225" x2="460" y2="225" stroke="#FFD23F" stroke-width="3" stroke-dasharray="4 4" filter="url(#coopGlow)"/>
+
+  <!-- Player 1 -->
+  <circle cx="340" cy="225" r="26" fill="#120c1f" stroke="#20E3FF" stroke-width="4" filter="url(#coopGlow)"/>
+  <circle cx="340" cy="225" r="16" fill="#20E3FF"/>
+  <text x="340" y="275" text-anchor="middle" fill="#20E3FF" font-family="'Press Start 2P', monospace" font-size="10">P1 KNIGHT</text>
+
+  <!-- Player 2 -->
+  <circle cx="460" cy="225" r="26" fill="#120c1f" stroke="#FF2DA6" stroke-width="4" filter="url(#coopGlow)"/>
+  <circle cx="460" cy="225" r="16" fill="#FF2DA6"/>
+  <text x="460" y="275" text-anchor="middle" fill="#FF2DA6" font-family="'Press Start 2P', monospace" font-size="10">P2 BERSERKER</text>
+
+  <!-- Crossfire Cone -->
+  <polygon points="340,225 150,100 150,350" fill="#20E3FF" opacity="0.08"/>
+  <polygon points="460,225 650,100 650,350" fill="#FF2DA6" opacity="0.08"/>
+
+  <!-- Eliminated Enemies / Explosions -->
+  <circle cx="160" cy="140" r="12" fill="none" stroke="#FFD23F" stroke-width="3" filter="url(#coopGlow)"/>
+  <circle cx="640" cy="310" r="12" fill="none" stroke="#FFD23F" stroke-width="3" filter="url(#coopGlow)"/>
+
+  <!-- Header Banner -->
+  <rect x="250" y="40" width="300" height="40" rx="8" fill="#09070D" stroke="#7B2CFF" stroke-width="2"/>
+  <text x="400" y="65" text-anchor="middle" fill="#FFD23F" font-family="'Press Start 2P', monospace" font-size="11">DUO SURVIVAL LINK</text>
+
+  <!-- Footer Tag -->
+  <text x="400" y="400" text-anchor="middle" fill="#20E3FF" font-family="'Share Tech Mono', monospace" font-size="14">SAME PC DISPLAY • ZERO LATENCY OFFLINE COOPERATIVE COMBAT</text>
+</svg>

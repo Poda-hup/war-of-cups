@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <radialGradient id="aiBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#180e2b"/>
+      <stop offset="100%" stop-color="#09070D"/>
+    </radialGradient>
+    <filter id="rayGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#aiBg)"/>
+
+  <!-- Radar Grid Circles -->
+  <circle cx="400" cy="225" r="160" fill="none" stroke="#7B2CFF" stroke-width="1" stroke-dasharray="4 8" opacity="0.4"/>
+  <circle cx="400" cy="225" r="90" fill="none" stroke="#20E3FF" stroke-width="1" stroke-dasharray="2 4" opacity="0.3"/>
+  <circle cx="400" cy="225" r="30" fill="none" stroke="#FF3366" stroke-width="1" opacity="0.6"/>
+
+  <!-- Obstacle Wall (Obstacle avoidance demonstration) -->
+  <rect x="370" y="70" width="60" height="70" rx="4" fill="#24113D" stroke="#7B2CFF" stroke-width="2"/>
+  <text x="400" y="110" text-anchor="middle" fill="#7B2CFF" font-family="'Share Tech Mono', monospace" font-size="12">WALL</text>
+
+  <!-- Central Enemy AI Mob -->
+  <circle cx="400" cy="225" r="24" fill="#FF3366" stroke="#ffffff" stroke-width="3" filter="url(#rayGlow)"/>
+  <text x="400" y="230" text-anchor="middle" fill="#ffffff" font-family="'Press Start 2P', monospace" font-size="9">AI</text>
+
+  <!-- 8-Direction Raycasts -->
+  <!-- North (blocked by wall) -->
+  <line x1="400" y1="200" x2="400" y2="140" stroke="#FFD23F" stroke-width="2" stroke-dasharray="3 3"/>
+  <circle cx="400" cy="140" r="4" fill="#FFD23F" filter="url(#rayGlow)"/>
+  <text x="415" y="165" fill="#FFD23F" font-family="'Share Tech Mono', monospace" font-size="11">RAY HIT [WALL]</text>
+
+  <!-- North-East (Clear) -->
+  <line x1="417" y1="208" x2="520" y2="105" stroke="#20E3FF" stroke-width="1.5" opacity="0.7"/>
+  <!-- East (Clear) -->
+  <line x1="424" y1="225" x2="570" y2="225" stroke="#20E3FF" stroke-width="1.5" opacity="0.7"/>
+  <!-- South-East (Targeting P2 vector) -->
+  <line x1="417" y1="242" x2="560" y2="340" stroke="#FF2DA6" stroke-width="3" filter="url(#rayGlow)"/>
+  <!-- South (Clear) -->
+  <line x1="400" y1="249" x2="400" y2="370" stroke="#20E3FF" stroke-width="1.5" opacity="0.7"/>
+  <!-- South-West (Clear) -->
+  <line x1="383" y1="242" x2="260" y2="340" stroke="#20E3FF" stroke-width="1.5" opacity="0.7"/>
+  <!-- West (Targeting P1 vector - Further away) -->
+  <line x1="376" y1="225" x2="200" y2="225" stroke="#20E3FF" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+  <!-- North-West (Clear) -->
+  <line x1="383" y1="208" x2="260" y2="105" stroke="#20E3FF" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Player 1 (Further distance: d = 200px) -->
+  <circle cx="200" cy="225" r="18" fill="#120c1f" stroke="#20E3FF" stroke-width="3"/>
+  <text x="200" y="260" text-anchor="middle" fill="#20E3FF" font-family="'Share Tech Mono', monospace" font-size="12">P1 [d = 200m]</text>
+
+  <!-- Player 2 (Closer distance: d = 160px -> TARGET LOCKED) -->
+  <circle cx="560" cy="340" r="18" fill="#120c1f" stroke="#FF2DA6" stroke-width="3" filter="url(#rayGlow)"/>
+  <text x="560" y="380" text-anchor="middle" fill="#FF2DA6" font-family="'Share Tech Mono', monospace" font-size="12">P2 [d = 160m] ★ TARGET</text>
+
+  <!-- System Log Box -->
+  <rect x="30" y="30" width="310" height="90" rx="6" fill="#09070D" stroke="#20E3FF" stroke-width="1.5" opacity="0.95"/>
+  <text x="45" y="55" fill="#20E3FF" font-family="'Press Start 2P', monospace" font-size="9">AI DECISION MATRIX</text>
+  <text x="45" y="78" fill="#ffffff" font-family="'Share Tech Mono', monospace" font-size="13">Target: P2 (Dist: 160px &lt; 200px)</text>
+  <text x="45" y="100" fill="#FFD23F" font-family="'Share Tech Mono', monospace" font-size="13">Steer: Deflect from North Wall</text>
+</svg>

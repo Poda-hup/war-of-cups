@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <radialGradient id="arenaBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#180e2b"/>
+      <stop offset="100%" stop-color="#09070D"/>
+    </radialGradient>
+    <filter id="laserGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Arena Surface -->
+  <rect width="800" height="450" fill="url(#arenaBg)"/>
+
+  <!-- Arena Grid Floor -->
+  <g stroke="#7B2CFF" stroke-width="0.8" opacity="0.25">
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800 M0 400 H800"/>
+    <path d="M100 0 V450 M200 0 V450 M300 0 V450 M400 0 V450 M500 0 V450 M600 0 V450 M700 0 V450"/>
+  </g>
+
+  <!-- Obstacle Walls -->
+  <rect x="180" y="120" width="40" height="180" rx="4" fill="#24113D" stroke="#7B2CFF" stroke-width="2"/>
+  <rect x="580" y="140" width="40" height="180" rx="4" fill="#24113D" stroke="#7B2CFF" stroke-width="2"/>
+  <rect x="340" y="280" width="120" height="30" rx="4" fill="#24113D" stroke="#7B2CFF" stroke-width="2"/>
+
+  <!-- Player 1 (Blue/Cyan) -->
+  <circle cx="280" cy="220" r="22" fill="#120c1f" stroke="#20E3FF" stroke-width="4" filter="url(#laserGlow)"/>
+  <circle cx="280" cy="220" r="14" fill="#20E3FF"/>
+  <line x1="280" y1="220" x2="310" y2="200" stroke="#20E3FF" stroke-width="5" stroke-linecap="round"/>
+  <!-- P1 Projectiles -->
+  <line x1="330" y1="185" x2="360" y2="165" stroke="#20E3FF" stroke-width="4" filter="url(#laserGlow)"/>
+  <line x1="380" y1="150" x2="410" y2="130" stroke="#20E3FF" stroke-width="4" filter="url(#laserGlow)"/>
+  <text x="280" y="190" text-anchor="middle" fill="#20E3FF" font-family="'Press Start 2P', monospace" font-size="9">P1</text>
+
+  <!-- Player 2 (Pink) -->
+  <circle cx="380" cy="360" r="22" fill="#120c1f" stroke="#FF2DA6" stroke-width="4" filter="url(#laserGlow)"/>
+  <circle cx="380" cy="360" r="14" fill="#FF2DA6"/>
+  <line x1="380" y1="360" x2="415" y2="340" stroke="#FF2DA6" stroke-width="5" stroke-linecap="round"/>
+  <!-- P2 Projectiles -->
+  <line x1="435" y1="325" x2="465" y2="305" stroke="#FF2DA6" stroke-width="4" filter="url(#laserGlow)"/>
+  <text x="380" y="400" text-anchor="middle" fill="#FF2DA6" font-family="'Press Start 2P', monospace" font-size="9">P2</text>
+
+  <!-- Swarm Enemies (Red/Crimson) -->
+  <g filter="url(#laserGlow)">
+    <circle cx="480" cy="110" r="14" fill="#FF3366" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="530" cy="160" r="14" fill="#FF3366" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="510" cy="240" r="14" fill="#FF3366" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="650" cy="220" r="14" fill="#FF3366" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="680" cy="290" r="14" fill="#FF3366" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="490" cy="320" r="14" fill="#FF3366" stroke="#ffffff" stroke-width="2"/>
+  </g>
+
+  <!-- Dropped Shield Potion Item -->
+  <g transform="translate(430, 200)">
+    <rect x="-12" y="-12" width="24" height="24" rx="4" fill="#09070D" stroke="#20E3FF" stroke-width="2"/>
+    <polygon points="0,-7 7,-2 5,6 -5,6 -7,-2" fill="#20E3FF" filter="url(#laserGlow)"/>
+  </g>
+
+  <!-- Arcade HUD Overlay -->
+  <rect x="20" y="20" width="760" height="40" rx="4" fill="#09070D" stroke="#7B2CFF" stroke-width="1.5" opacity="0.9"/>
+  <text x="40" y="45" fill="#20E3FF" font-family="'Press Start 2P', monospace" font-size="11">P1 HP: 100% | SHIELD: 80%</text>
+  <text x="450" y="45" fill="#FF2DA6" font-family="'Press Start 2P', monospace" font-size="11">P2 HP: 90% | SHIELD: 100%</text>
+  <text x="360" y="45" text-anchor="middle" fill="#FFD23F" font-family="'Press Start 2P', monospace" font-size="11">ROUND 03</text>
+</svg>

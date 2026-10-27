@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <radialGradient id="potionBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#180e2b"/>
+      <stop offset="100%" stop-color="#09070D"/>
+    </radialGradient>
+    <filter id="shieldGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#potionBg)"/>
+
+  <!-- Health Potion Card (Left) -->
+  <g transform="translate(140, 100)">
+    <rect width="220" height="240" rx="12" fill="#120c1f" stroke="#FF2DA6" stroke-width="2.5"/>
+    <text x="110" y="35" text-anchor="middle" fill="#FF2DA6" font-family="'Press Start 2P', monospace" font-size="11">HEALTH POTION</text>
+    
+    <!-- Flask Icon -->
+    <path d="M100 65 L120 65 L120 85 L145 140 Q150 155 135 165 Q110 175 85 165 Q70 155 75 140 L100 85 Z" fill="#FF2DA6" filter="url(#shieldGlow)" opacity="0.8"/>
+    <circle cx="110" cy="130" r="8" fill="#ffffff" opacity="0.6"/>
+    <circle cx="120" cy="145" r="4" fill="#ffffff" opacity="0.6"/>
+
+    <text x="110" y="195" text-anchor="middle" fill="#ffffff" font-family="'Share Tech Mono', monospace" font-size="14">CAPACITY: 1 MAX</text>
+    <text x="110" y="218" text-anchor="middle" fill="#FF2DA6" font-family="'Share Tech Mono', monospace" font-size="12">KEYS: P1 [E] • P2 [K]</text>
+  </g>
+
+  <!-- Shield Potion Card (Right) -->
+  <g transform="translate(440, 100)">
+    <rect width="220" height="240" rx="12" fill="#120c1f" stroke="#20E3FF" stroke-width="2.5"/>
+    <text x="110" y="35" text-anchor="middle" fill="#20E3FF" font-family="'Press Start 2P', monospace" font-size="11">SHIELD POTION</text>
+    
+    <!-- Shield Icon -->
+    <polygon points="110,65 155,80 145,140 110,170 75,140 65,80" fill="#20E3FF" filter="url(#shieldGlow)" opacity="0.8"/>
+    <polygon points="110,75 145,88 137,135 110,160 83,135 75,88" fill="#120c1f"/>
+    <polygon points="110,85 135,95 130,130 110,150 90,130 85,95" fill="#20E3FF" opacity="0.7"/>
+
+    <text x="110" y="195" text-anchor="middle" fill="#ffffff" font-family="'Share Tech Mono', monospace" font-size="14">CAPACITY: 1 MAX</text>
+    <text x="110" y="218" text-anchor="middle" fill="#20E3FF" font-family="'Share Tech Mono', monospace" font-size="12">KEYS: P1 [Q] • P2 [L]</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="400" y="55" text-anchor="middle" fill="#FFD23F" font-family="'Press Start 2P', monospace" font-size="13">DYNAMIC DEFENSIVE POTION MATRIX</text>
+  <text x="400" y="390" text-anchor="middle" fill="#20E3FF" font-family="'Share Tech Mono', monospace" font-size="14">SHIELD ABSORBS 100% DAMAGE BEFORE HEALTH DEPLETION</text>
+</svg>
